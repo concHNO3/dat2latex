@@ -1,0 +1,13 @@
+dat2latex ist ein Bashskript welches .dat dateien in LaTeX Tabellen Code angibt. dabei weden alle Punkte durch Kommas ersetzt.
+
+$> dat2latex foo.dat
+gibt den Inhalt von foo.dat als LaTeX code auf den stdout aus.
+
+$> dat2latex foo.dat bar.tex
+schreibt den Inhalt von foo.dat als LaTeX in bar.tex, der vorherige Inhalt von bar.tex wird dabei gelöscht!
+
+cc by-sa
+dat2latex von Pni0 steht unter einer Creative Commons Namensnennung-Weitergabe unter gleichen Bedingungen 3.0 Unported Lizenz.
+http://creativecommons.org/licenses/by-sa/3.0/
+
+

@@ -1,0 +1,13 @@
+#! /bin/bash
+
+if [ -n "$1" ]; then
+	if [ -n "$2" ];then
+		cat "$1" | sed '/^#/d' |sed 's/^ *//g'| sed 's/ \+/ /g' |sed 's/	/ /g' |sed 's/ / \& /g'| sed 's!$!\\\\!g'| sed 's/\./,/g' > "$2";
+	else
+		cat "$1" | sed '/^#/d' |sed 's/^ *//g'| sed 's/ \+/ /g' | sed 's/	/ /g' |sed 's/ / \& /g'| sed 's!$!\\\\!g'| sed 's/\./,/g'
+	fi
+else
+	echo "dat2latex Input.dat" ; echo -n;
+	echo "oder dat2latex Input.dat Output.tex"; echo -n;
+	echo "ACHTUNG Output.tex wird ueberschrieben!"; echo -n;
+fi
