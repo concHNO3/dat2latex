@@ -2,12 +2,14 @@
 
 if [ -n "$1" ]; then
 	if [ -n "$2" ];then
-		cat "$1" | sed '/^#/d' |sed 's/^ *//g'| sed 's/ \+/ /g' |sed 's/	/ /g' |sed 's/ / \& /g'| sed 's!$!\\\\!g'| sed 's/\./,/g' > "$2";
+		cat "$1" | sed '/^#/d;s/^ *//g;s/ \+/ /g;s/	/ /g;s/ / \& /g;s!$!\\\\!g;s/\./,/g' > "$2";
 	else
-		cat "$1" | sed '/^#/d' |sed 's/^ *//g'| sed 's/ \+/ /g' | sed 's/	/ /g' |sed 's/ / \& /g'| sed 's!$!\\\\!g'| sed 's/\./,/g'
+		cat "$1" | sed '/^#/d;s/^ *//g;s/ \+/ /g;s/	/ /g;s/ / \& /g;s!$!\\\\!g;s/\./,/g';
 	fi
 else
-	echo "dat2latex Input.dat" ; echo -n;
-	echo "oder dat2latex Input.dat Output.tex"; echo -n;
-	echo "ACHTUNG Output.tex wird ueberschrieben!"; echo -n;
+	echo "Usage:";
+	echo "dat2latex Input.dat" ;
+	echo "oder dat2latex Input.dat > Output.tex";
+	echo "oder dat2latex Input.dat Output.tex";
+	echo "ACHTUNG Output.tex wird ueberschrieben!";
 fi
